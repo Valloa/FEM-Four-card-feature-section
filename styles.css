@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --red: hsl(0deg, 78%, 62%);
+    --cyan: hsl(180deg, 62%, 55%);
+    --blue: hsl(212deg, 86%, 64%);
+    --orange: hsl(34deg, 97%, 64%);
+  --white: hsl(0deg, 0%, 100%);
+  --grey-500: hsl(234deg, 12%, 34%);
+  --grey-400: hsl(212deg, 6%, 44%);
+
+  --spacing-1600: 8rem;
+  --spacing-700: 3.5rem;
+  --spacing-600: 3rem;
+  --spacing-500: 2.5rem;
+  --spacing-400: 2rem;
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-150: 0.75rem;
+  --spacing-100: 0.5rem;
+  --spacing-50: 0.25rem;
+
+  --fweight-thin: 100;
+  --fweight-extra-light: 200;
+  --fweight-light: 300;
+  --fweight-regular: 400;
+  --fweight-medium: 500;
+  --fweight-semi-bold: 600;
+  --fweight-bold: 700;
+  --fweight-extra-bold: 800;
+  --fweight-black: 900;
+  --fweight-extra-black: 1000;
+
+    color: var(--grey-500);
+  font-family: "Poppins", sans-serif;
+  font-weight: var(--fweight-regular);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --transition: all 0.5s ease, outline 0.1s ease;
+  }
+}
+
+.attribution {
+  position: absolute;
+  inset-inline: 50% auto;
+  inset-block: auto 1rem;
+  translate: -50%;
+  margin: 0;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-block-size: 100dvb;
+  margin: 0;
+  padding-inline: var(--spacing-400);
+  padding-block: 6.375rem;
+
+  @media (width > 48.5rem) {
+    padding-inline: var(--spacing-700);
+  }
+}
+
+img {
+  display: block;
+}
+
+.Text1 {
+    font-size: clamp(1.5rem, .5rem + 4vw, 2.25rem);
+  font-weight: var(--fweight-semi-bold);
+  line-height: 1.4;
+  letter-spacing: calc(0.25em / 36);
+}
+
+.Text1--light {
+  font-weight: var(--fweight-extra-light);
+}
+
+.Text3 {
+  font-size: 1.25rem;
+  font-weight: var(--fweight-semi-bold);
+  line-height: 1.35;
+}
+
+.Text4 {
+  font-size: .9375rem;
+  line-height: 1.4;
+}
+
+.Text5 {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.Main {
+    display: grid;
+    gap: 4.625rem;
+    inline-size: min(100%, 69.625rem);
+}
+
+.Header {
+    display: grid;
+    gap: var(--spacing-200);
+    justify-self: center;
+    inline-size: min(100%, 33.75rem);
+  text-align: center;
+}
+
+.Header__title {
+    display: grid;
+}
+
+.Blocks {
+    display: grid;
+    gap: var(--spacing-400);
+        grid-template:
+            'supervisor'auto
+            'builder'auto
+            'karma'auto
+            'calculator'auto
+            / 100%;
+
+    @media (width > 48.5rem) {
+        grid-template:
+            '.          supervisor  .'      auto
+            'builder    supervisor  karma'  auto
+            'builder    calculator  karma'  auto
+            '.          calculator  .'      auto
+            / 1fr 1fr 1fr;
+    }
+
+    @media (width > 72rem) {
+        grid-template:
+            '.          builder .           ' auto
+            'supervisor builder calculator  ' auto
+            'supervisor karma   calculator  ' auto
+            '.          karma   .           ' auto
+            / 1fr 1fr 1fr;
+    }
+}
+
+.Block {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    padding-block: var(--spacing-400);
+    padding-inline: var(--spacing-400);
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: 0 15px 30px -11px rgba(131, 166, 210, .5);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        display: block;
+        inline-size: 100%;
+        block-size: .25rem;
+        background: var(--accent);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        justify-self: end;
+        inline-size: 4rem;
+        aspect-ratio: 1;
+        margin-block-start: 2rem;
+        background: no-repeat center/cover;
+    }
+}
+
+.Supervisor {
+    --accent: var(--cyan);
+    grid-area: supervisor;
+
+    &::after {
+        background-image: url('./images/icon-supervisor.svg');
+    }
+}
+
+.TeamBuilder {
+    --accent: var(--red);
+    grid-area: builder;
+
+    &::after {
+        background-image: url('./images/icon-team-builder.svg');
+    }
+}
+
+.Karma {
+    --accent: var(--orange);
+    grid-area: karma;
+
+    &::after {
+        background-image: url('./images/icon-karma.svg');
+    }
+}
+
+.Calculator {
+    --accent: var(--blue);
+    grid-area: calculator;
+
+    &::after {
+        background-image: url('./images/icon-calculator.svg');
+    }
+}
