@@ -186,6 +186,14 @@ img {
         margin-block-start: 2rem;
         background: no-repeat center/cover;
     }
+
+    h2 {
+        margin-block-end: .375rem;
+    }
+
+    p {
+        color: var(--grey-400);
+    }
 }
 
 .Supervisor {
