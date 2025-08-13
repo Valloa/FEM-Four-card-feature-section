@@ -160,6 +160,7 @@ img {
     position: relative;
     overflow: hidden;
     display: grid;
+    min-block-size: 15.625rem;
     padding-block: var(--spacing-400);
     padding-inline: var(--spacing-400);
     background: var(--white);
@@ -183,7 +184,7 @@ img {
         justify-self: end;
         inline-size: 4rem;
         aspect-ratio: 1;
-        margin-block-start: 2rem;
+        margin-block: 2rem;
         background: no-repeat center/cover;
     }
 
