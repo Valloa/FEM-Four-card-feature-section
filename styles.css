@@ -139,11 +139,10 @@ img {
 
     @media (width > 48.5rem) {
         grid-template:
-            '.          supervisor  .'      auto
-            'builder    supervisor  karma'  auto
-            'builder    calculator  karma'  auto
-            '.          calculator  .'      auto
-            / 1fr 1fr 1fr;
+            '.          supervisor  supervisor  .'      auto
+            'builder    builder     karma       karma'  auto
+            '.          calculator  calculator  .'      auto
+            / 1fr 1fr 1fr 1fr;
     }
 
     @media (width > 72rem) {
