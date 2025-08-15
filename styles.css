@@ -73,7 +73,7 @@ body {
   padding-inline: var(--spacing-400);
   padding-block: 6.375rem;
 
-  @media (width > 48.5rem) {
+  @media (width > 37.5rem) {
     padding-inline: var(--spacing-700);
   }
 }
@@ -137,7 +137,7 @@ img {
             'calculator'auto
             / 100%;
 
-    @media (width > 48.5rem) {
+    @media (width > 37.5rem) {
         grid-template:
             '.          supervisor  supervisor  .'      auto
             'builder    builder     karma       karma'  auto
@@ -145,7 +145,7 @@ img {
             / 1fr 1fr 1fr 1fr;
     }
 
-    @media (width > 72rem) {
+    @media (width > 57.5rem) {
         grid-template:
             '.          builder .           ' auto
             'supervisor builder calculator  ' auto
